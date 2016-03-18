@@ -1,0 +1,38 @@
+USE [ILP]
+GO
+
+/****** Object:  Table [dbo].[GR3_RTTFault]    Script Date: 03/05/2012 08:10:46 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[GR3_RTTFault](
+	[FaultID] [int] IDENTITY(1000,1) NOT NULL,
+	[UserID] [int] NOT NULL,
+	[UserRemarks] [varchar](200) NOT NULL,
+	[Status] [bit] NOT NULL,
+	[Problem_Type] [varchar](50) NOT NULL,
+	[Sub_Category] [varchar](50) NOT NULL,
+	[Dapartment] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_GR3_RTTFault] PRIMARY KEY CLUSTERED 
+(
+	[FaultID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[GR3_RTTFault]  WITH CHECK ADD FOREIGN KEY([UserID])
+REFERENCES [dbo].[GR3_RTTUser] ([UserID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+

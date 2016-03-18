@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1F784DE-8676-47C6-8895-3A7289836794}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RTT</RootNamespace>
+    <AssemblyName>RTT</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="AgentHomePage.aspx" />
+    <Content Include="AgentUpdateFault.aspx" />
+    <Content Include="Calender.css" />
+    <Content Include="Calender.js" />
+    <Content Include="CreateFault.aspx" />
+    <Content Include="CustomerHomePage.aspx" />
+    <Content Include="FaultManagement.aspx" />
+    <Content Include="Header.js" />
+    <Content Include="HomePage.aspx" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\3.jpg" />
+    <Content Include="Images\4.jpg" />
+    <Content Include="Images\5.jpg" />
+    <Content Include="Images\blue_and_white-t2.jpg" />
+    <Content Include="Images\calvin_and_hobbes_drawing-t2.jpg" />
+    <Content Include="Images\ghosts_on_the_ice-t2.jpg" />
+    <Content Include="Images\header_1.jpg" />
+    <Content Include="Images\hilton_head_sunrise.jpg" />
+    <Content Include="Images\img_5.gif" />
+    <Content Include="Images\img_6.gif" />
+    <Content Include="Images\img_7.gif" />
+    <Content Include="Images\jarsclay-template.jpg" />
+    <Content Include="Images\Untitled.jpg" />
+    <Content Include="ProfileManagement.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="RTTStyleSheet.css" />
+    <Content Include="Text\Billing issue.txt" />
+    <Content Include="Text\DownList3.txt" />
+    <Content Include="Text\Equipment issue.txt" />
+    <Content Include="Text\Lineissue.txt" />
+    <Content Include="Text\Main.txt" />
+    <Content Include="Text\NoiseLine.txt" />
+    <Content Include="Text\ProblemType.txt" />
+    <Content Include="Text\Service issue.txt" />
+    <Content Include="UpdateFault.aspx" />
+    <Content Include="UserFaultManagement.aspx" />
+    <Content Include="ViewFault.aspx" />
+    <Content Include="ViewFaults.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgentHomePage.aspx.cs">
+      <DependentUpon>AgentHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgentHomePage.aspx.designer.cs">
+      <DependentUpon>AgentHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgentUpdateFault.aspx.cs">
+      <DependentUpon>AgentUpdateFault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgentUpdateFault.aspx.designer.cs">
+      <DependentUpon>AgentUpdateFault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateFault.aspx.cs">
+      <DependentUpon>CreateFault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateFault.aspx.designer.cs">
+      <DependentUpon>CreateFault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerHomePage.aspx.cs">
+      <DependentUpon>CustomerHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerHomePage.aspx.designer.cs">
+      <DependentUpon>CustomerHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FaultManagement.aspx.cs">
+      <DependentUpon>FaultManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FaultManagement.aspx.designer.cs">
+      <DependentUpon>FaultManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileManagement.aspx.cs">
+      <DependentUpon>ProfileManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfileManagement.aspx.designer.cs">
+      <DependentUpon>ProfileManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RTTMasterPage.Master.cs">
+      <DependentUpon>RTTMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RTTMasterPage.Master.designer.cs">
+      <DependentUpon>RTTMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateFault.aspx.cs">
+      <DependentUpon>UpdateFault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateFault.aspx.designer.cs">
+      <DependentUpon>UpdateFault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserFaultManagement.aspx.cs">
+      <DependentUpon>UserFaultManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserFaultManagement.aspx.designer.cs">
+      <DependentUpon>UserFaultManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewFault.aspx.cs">
+      <DependentUpon>ViewFault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewFault.aspx.designer.cs">
+      <DependentUpon>ViewFault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewFaults.aspx.cs">
+      <DependentUpon>ViewFaults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewFaults.aspx.designer.cs">
+      <DependentUpon>ViewFaults.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RTTMasterPage.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RTT.BLLFactory\RTT.BLLFactory.csproj">
+      <Project>{7142808D-2D95-49DE-9DDD-150B705DEE49}</Project>
+      <Name>RTT.BLLFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RTT.BOFactory\RTT.BOFactory.csproj">
+      <Project>{3495638B-EA85-454F-93B2-B9FAB525E98C}</Project>
+      <Name>RTT.BOFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RTT.Types\RTT.Types.csproj">
+      <Project>{5F9E10B7-F477-405A-82D3-1ECA47F7C155}</Project>
+      <Name>RTT.Types</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Agent.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="User.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Skin1\Skin1.skin" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51368</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

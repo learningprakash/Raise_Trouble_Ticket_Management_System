@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="RTT"  description="">
+    <siteMapNode url="~/Agent/AgentHomepage.aspx" title="Home"  description="" >
+      <siteMapNode url="~/Agent/FaultManagement.aspx" title="fault Management" description="">
+        <siteMapNode url="~/Agent/ViewFault.aspx" title="View fault" description=""/>
+        <siteMapNode url="~/Agent/UpdateFault.aspx" title="Update fault" description=""/>
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/Customer/CustomerHomepage.aspx" title="Home"  description="" >
+      <siteMapNode url="~/Customer/CustomerFaultManagement.aspx" title="fault Management" description="">
+        <siteMapNode url="~/Customer/ViewFaults.aspx" title="View faults" description="">
+          <siteMapNode url="~/Customer/UpdateFault.aspx" title="Update fault" description=""/>
+        </siteMapNode>
+      </siteMapNode>
+      <siteMapNode url="~/Customer/CustomerProfileManagement.aspx" title="Profile Management" description=""/>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

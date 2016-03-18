@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" EnableTheming="true" CodeBehind="RTTMasterPage.master.cs"  Inherits="RTT.RTTMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+   <title>Telecom Services Company Ltd</title>
+    <script type="text/javascript" language="javascript">
+        var SlideShowSpeed = 3000;
+        var CrossFadeDuration = 3;
+        var Picture = new Array();
+
+        Picture[1] = '../Images/1.jpg';
+        Picture[2] = '../Images/2.jpg';
+        Picture[3] = '../Images/3.jpg';
+        Picture[4] = '../Images/4.jpg';
+        Picture[5] = '../Images/5.jpg';
+
+
+
+        var tss;
+        var iss;
+        var jss = 1;
+        var pss = Picture.length - 1;
+
+        var preLoad = new Array();
+        for (iss = 1; iss < pss + 1; iss++) {
+            preLoad[iss] = new Image();
+            preLoad[iss].src = Picture[iss];
+        }
+
+        function runSlideShow() {
+            if (document.all) {
+                document.images.PictureBox.style.filter = "blendTrans(duration=2)";
+                document.images.PictureBox.style.filter = "blendTrans(duration=CrossFadeDuration)";
+                document.images.PictureBox.filters.blendTrans.Apply();
+            }
+            document.images.PictureBox.src = preLoad[jss].src;
+            if (document.all) document.images.PictureBox.filters.blendTrans.Play();
+            jss = jss + 1;
+            if (jss > (pss)) jss = 1;
+            tss = setTimeout('runSlideShow()', SlideShowSpeed);
+        }
+
+    </script>
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <link rel="Stylesheet" href="RTTStyleSheet.css" />
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="runSlideShow()" style="background-color: #4A637B;">
+<form id="form1" runat="server">
+     <div align="center" >
+        <table width="70%" style="background-color: #EAEEF2; min-height: 100%; height: 500px;
+            height: 100%; height: 4em;">
+            <tr>
+                <td colspan="2" align="center" valign="top">
+                    <img id="img"  src="../Images/1.jpg" alt="TSCL" name="PictureBox" />
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" valign="top" align="center">
+                    <asp:Menu runat="server" ID="siteMenu" DataSourceID="SiteMapDataSource1" 
+                        BackColor="#415770" BorderColor="#F0F3F7" BorderStyle="Solid" 
+                        Font-Names="Verdana" Font-Size="Small" ForeColor="White" 
+                        RenderingMode="List">
+                        <StaticHoverStyle BackColor="#BFCCDB" BorderColor="White" BorderStyle="Solid" 
+                            BorderWidth="1px" ForeColor="#415770" />
+                        <StaticMenuItemStyle BorderStyle="Solid" BorderWidth="1px" Height="25px" 
+                            ItemSpacing="0px" VerticalPadding="5px" Width="200px" />
+                        <StaticSelectedStyle BorderStyle="Solid" Font-Bold="True" Font-Names="Verdana" 
+                            Font-Size="Medium" ForeColor="#FFDDDD" />
+                    </asp:Menu>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" /><br />
+                </td>
+                <td width="80%" valign="top" align="left">
+                    <table width="100%">
+                        <tr>
+                            <td align="left">
+                                <asp:SiteMapPath ID="SiteMapPath1"  runat="server" Font-Names="Verdana" Font-Size="0.9em" 
+                                    PathSeparator=" : ">
+                                    <CurrentNodeStyle ForeColor="#333333" />
+                                    <NodeStyle Font-Bold="True" ForeColor="#7C6F57" />
+                                    <PathSeparatorStyle Font-Bold="True" ForeColor="#5D7B9D" />
+                                    <RootNodeStyle Font-Bold="True" ForeColor="#5D7B9D" />
+                                </asp:SiteMapPath>
+                            </td>
+                            <td align="right">
+                                <asp:Label ID="lblWelcome" runat="server" Text="Welcome : "></asp:Label>&nbsp;
+                                <asp:Label ID="lblUserName" runat="server" ForeColor="Red"></asp:Label>&nbsp;
+                                <asp:LinkButton ID="linkLogout" CausesValidation="False" runat="server" 
+                                    Text="Logout" OnClick="linkLogout_Click"></asp:LinkButton>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" valign="top" align="center" style="height:560px;">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    Telecom Services Company Ltd. &copy; 2012-2013 All Rights Reserved
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

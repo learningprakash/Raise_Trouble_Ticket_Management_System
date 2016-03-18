@@ -1,0 +1,306 @@
+=======Agent Faulr Update===============
+
+Create procedure [dbo].[sp_AgentFaultUpdate_GR3](
+											@FaultID int,
+											@UserRemarks varchar(200))
+	AS BEGIN
+		BEGIN TRY
+		BEGIN TRAN
+			update dbo.GR3_RTTFault set UserRemarks =@UserRemarks
+			where FaultID = @FaultID
+			COMMIT;
+END TRY
+BEGIN CATCH
+ROLLBACK;
+END CATCH
+END
+
+=================check contact number================
+
+CREATE PROCEDURE [dbo].[sp_CheckContactNumber_GR3](@UserID INT,
+							     @Contact VARCHAR(50))
+AS
+BEGIN
+	BEGIN TRY
+		IF EXISTS(SELECT * FROM GR3_RTTUser 
+			WHERE UserID=@UserID AND 
+			ContactNo=@Contact)
+		BEGIN
+			RETURN 1
+		END
+		ELSE
+		BEGIN
+		    RETURN 0
+		END
+	END TRY
+	BEGIN CATCH
+		RETURN -1
+	END CATCH
+END;
+
+===========close fault============
+
+CREATE PROCEDURE [dbo].[sp_CloseFault_GR3](@FaultID INT)
+AS
+BEGIN
+	BEGIN TRY
+	BEGIN TRAN
+		UPDATE GR3_RTTFault
+			SET Status=0
+		WHERE FaultID=@FaultID
+		COMMIT
+		RETURN 0
+	END TRY
+	BEGIN CATCH
+		ROLLBACK
+		RETURN -1
+	END CATCH
+END;
+
+======================delete fault==================
+
+
+BEGIN
+	BEGIN TRY
+		BEGIN TRAN
+		DELETE FROM dbo.GR3_RTTFault
+		WHERE FaultID = @FaultID
+		COMMIT
+	END TRY
+	BEGIN CATCH
+		ROLLBACK
+	END CATCH
+END
+
+
+===============user fault update=====================
+
+CREATE procedure [dbo].[sp_faultUpdate_GR3](
+											@FaultID int,
+											@UserRemarks varchar(200),
+											@Status bit,
+											@Problem_Type varchar(50),
+											@Sub_Category nvarchar(50),
+											@Dapartment varchar(50)
+											)
+	AS BEGIN
+		BEGIN TRY
+		BEGIN TRAN
+			update dbo.GR3_RTTFault set UserRemarks =@UserRemarks,Status=@Status,Problem_Type= @Problem_Type,
+			Sub_Category=@Sub_Category,Dapartment= @Dapartment
+			where FaultID = @FaultID
+			COMMIT;
+END TRY
+BEGIN CATCH
+ROLLBACK;
+END CATCH
+END
+
+
+==========================get fault details==============
+
+CREATE PROCEDURE [dbo].[sp_getFaultDetails_GR3](
+									@FaultID int
+									)
+  AS
+  BEGIN
+  	BEGIN  TRY
+  		BEGIN TRAN                                     
+  		SELECT * FROM GR3_RTTFault
+  		WHERE FaultID = @FaultID
+  		COMMIT
+  		RETURN 0
+  	END TRY
+  	BEGIN CATCH
+  		RETURN -1
+  		ROLLBACK
+  	END CATCH
+  END
+
+
+================raise fault===============================
+
+CREATE PROCEDURE [dbo].[sp_RaiseFault_GR3](
+							@FaultId int out,	
+						  @UserID INT,
+						  @FaultStatus BIT,
+						  @Remarks VARCHAR(200),
+						  @ProblemType VARCHAR(50),
+						  @SubCategory varchar(50),
+						  @Department varchar(50)
+						  )
+									
+AS
+BEGIN
+	BEGIN TRY
+	BEGIN TRAN
+		INSERT INTO GR3_RTTFault
+			VALUES( @UserID,@Remarks,@FaultStatus,@ProblemType,@SubCategory,@Department)
+			set @FaultId=@@IDENTITY
+		COMMIT
+		RETURN 0
+	END TRY
+	BEGIN CATCH
+		ROLLBACK
+		RETURN -1
+	END CATCH
+END;
+
+=======================register===========================
+
+CREATE procedure [dbo].[sp_Register_GR3](
+								@UserID int out,
+								@UserName varchar(50),
+								@DOJ nvarchar(50),
+								@EmailID varchar(50),
+								@Address varchar(100),
+								@Password varchar(50),
+								@ContactNo varchar(50),
+								@Alt_ContactNo varchar(50)
+								)
+ AS
+  BEGIN
+  	BEGIN  TRY
+  		BEGIN TRAN  
+					insert into dbo.GR3_RTTUser 
+					values (
+							@UserName,
+							@DOJ ,
+							@EmailID ,
+							@Address ,
+							@Password ,
+							@ContactNo ,
+							@Alt_ContactNo,
+							'customer' 
+							)
+				set @UserID=@@IDENTITY
+			COMMIT;  
+	END TRY
+	BEGIN CATCH
+			ROLLBACK;
+	END CATCH 
+END
+
+======================search user==============================
+
+CREATE PROCEDURE [dbo].[sp_SearchUser_GR3](@UserID int)
+  AS
+  BEGIN
+  	BEGIN  TRY
+  		BEGIN TRAN                                     
+  		SELECT * FROM GR3_RTTUser
+  		WHERE UserID = @UserID
+  		COMMIT
+  		RETURN 0
+  	END TRY
+  	BEGIN CATCH
+  		RETURN -1
+  		ROLLBACK
+  	END CATCH
+  END
+
+========================update profile=========================
+
+CREATE PROCEDURE [dbo].[sp_UpdateProfile_GR3](@UserName VARCHAR(50),
+                                              @DateOfJoining DATETIME,
+                                              @EmailID VARCHAR(50),
+                                              @Address VARCHAR(150),
+                                              @ContactNo VARCHAR(50),
+                                              @AltContactNo VARCHAR(50),
+                                              @UserID INT)
+ AS BEGIN
+  BEGIN TRY
+ BEGIN TRAN
+IF EXISTS(Select UserID FROM GR3_RTTUser  where UserID = @UserID)
+	UPDATE GR3_RTTUser 
+   			SET UserName=@UserName,   
+   				DOJ=@DateOfJoining,
+   				EmailId=@EmailID,
+   				Address=@Address,
+   				ContactNo=@ContactNo,
+   				Alt_ContactNo=@AltContactNo
+   			WHERE UserID=@UserID
+	else
+ INSERT INTO  GR3_RTTUser(UserID,
+						UserName,
+						DOJ,
+						EmailID,
+						Address,
+						ContactNo,
+						Alt_ContactNo)
+						 
+		VALUES(@UserID,
+		       @UserName,
+                       @DateOFJoining,
+                       @EmailID,
+                       @Address,
+                       @ContactNo,
+                       @AltContactNo)              
+               COMMIT                             
+END TRY
+BEGIN CATCH
+ROLLBACK;
+END CATCH
+END
+
+======================login===============================
+
+CREATE PROCEDURE [dbo].[sp_UserLogin_GR3](@UserID int,
+                                     @PasswordText VARCHAR(50),
+                                     @UserType VARCHAR(50) OUT,
+                                     @UserName VARCHAR(50) OUT)
+  AS
+  BEGIN
+  	BEGIN  TRY
+  		BEGIN TRAN                                     
+  		SELECT @UserType=User_Type, @UserName=UserName FROM GR3_RTTUser
+  		WHERE UserID = @UserID AND Password = @PasswordText 
+  		COMMIT
+  		RETURN 0
+  	END TRY
+  	BEGIN CATCH
+  		RETURN -1
+  		ROLLBACK
+  	END CATCH
+  END
+
+
+=======================view all faults by id=================
+
+CREATE PROCEDURE [dbo].[sp_ViewAllFaultsByID_GR3](
+									@UserID int)
+  AS
+  BEGIN
+  	BEGIN  TRY
+  		BEGIN TRAN                                     
+  		SELECT * FROM GR3_RTTFault
+  		WHERE UserID = @UserID
+  		COMMIT
+  		RETURN 0
+  	END TRY
+  	BEGIN CATCH
+  		RETURN -1
+  		ROLLBACK
+  	END CATCH
+  END
+
+==================view faults by id===========================
+
+CREATE PROCEDURE [dbo].[sp_ViewFaultsByID_GR3](
+									@UserID int,
+									@Status bit
+									)
+  AS
+  BEGIN
+  	BEGIN  TRY
+  		BEGIN TRAN                                     
+  		SELECT * FROM GR3_RTTFault
+  		WHERE UserID = @UserID AND Status=@Status
+  		COMMIT
+  		RETURN 0
+  	END TRY
+  	BEGIN CATCH
+  		RETURN -1
+  		ROLLBACK
+  	END CATCH
+  END

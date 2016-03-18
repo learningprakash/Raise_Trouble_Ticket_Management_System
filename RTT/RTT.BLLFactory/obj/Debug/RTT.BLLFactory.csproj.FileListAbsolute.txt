@@ -1,0 +1,34 @@
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BLLFactory.dll
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BLLFactory.pdb
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BLL.dll
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.Types.dll
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.DALFactory.dll
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.DAL.dll
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BOFactory.dll
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BO.dll
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BLL.pdb
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.Types.pdb
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.DALFactory.pdb
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.DAL.pdb
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BOFactory.pdb
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BO.pdb
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\obj\Debug\ResolveAssemblyReference.cache
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\obj\Debug\RTT.BLLFactory.dll
+D:\gr3\AHD19_A74_Grp3\Final Project\RTT\RTT.BLLFactory\obj\Debug\RTT.BLLFactory.pdb
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BLLFactory.dll
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BLLFactory.pdb
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BLL.dll
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.Types.dll
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.DALFactory.dll
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.DAL.dll
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BOFactory.dll
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BO.dll
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BLL.pdb
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.Types.pdb
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.DALFactory.pdb
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.DAL.pdb
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BOFactory.pdb
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\bin\Debug\RTT.BO.pdb
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\obj\Debug\ResolveAssemblyReference.cache
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\obj\Debug\RTT.BLLFactory.dll
+E:\Study material\Final Project\Final Project\RTT\RTT.BLLFactory\obj\Debug\RTT.BLLFactory.pdb
